@@ -14,7 +14,6 @@ def insertion_sort(array_):
         
         print("after: ",array_)
         print(" ")
-
 array_ = [989,78,67,544,342,1,12,43]
 insertion_sort(array_)
 print("Insertion Sort: ", array_)
