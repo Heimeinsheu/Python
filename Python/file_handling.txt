@@ -1,2 +1,0 @@
- because python is important for interview
-practice daily
