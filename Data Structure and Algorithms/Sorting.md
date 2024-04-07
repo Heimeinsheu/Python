@@ -1,10 +1,10 @@
 # Sorting
 <p> Basically there are 5 sorting algorithm and rest are derived from them.</p>
 1. Insertion Sort<br>
-1. Bubble Sort<br>
-1. Selection Sort<br>
-1. Merge Sort<br>
-1. Quick Sort<br>
+2. Bubble Sort<br>
+3. Selection Sort<br>
+4. Merge Sort<br>
+5. Quick Sort<br>
 <hr>
 
 ## 1. Insertion Sort
@@ -178,27 +178,51 @@ flowchart TD
     N -->|14th iteration| O([1, 2, 3, 4, 6])
     O -->|15th iteration| P([1, 2, 3, 4, 6])
     P -->|16th iteration| Q([1, 2, 3, 4, 6])
+    Q -->R(Break)
 ```
 <hr>
 
 ## 3. Selection Sort
 <p>
+It use two for loop i.e.
+<pre> 
+1. for loop: traverse complete array.
+|    2. for loop(nested): 
+|    |    | if :
+</pre>
+In first iteration it find minimum element in the array and interchange its with the first element. Then pointer change it position to second element, it again find minimum element from position(2) to position(n) and iterchange it with second element and repeat again until n-1 (unnested).
 
 </p>
 
 > **Code**
 ```py
+def selection_sort(array):
+    for i in range(len(array)-1):
+        min = array[i]
+        pos = i
+        for j in range(i+1,len(array)):
+            if min>array[j]:
+            min = array[j]
+            pos=j
 
+    array[i],array[pos]=array[pos],array[i]
+    
+arr= [6,3,4,1,2]
+arr=selection_sort(arr)
+print("Selection Sort: ",arr)
 ```
 
 > **Output**
 ```
-
+Selection Sort: [1, 2, 3, 4, 6]
 ```
 > **Visual Representation**
 
 ```mermaid
-
+ A([6, 3, 4, 1, 2]) -->|1 iteration| B([1, 3, 4, 6, 2])
+    B -->|2nd iteration| C([1, 2, 4, 6, 3])
+    C -->|3rd iteration| D([1, 2, 3, 6, 4])
+    D -->|4th iteration| E([1, 2, 3, 4, 6])
 ```
 <hr>
 
